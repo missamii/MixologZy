@@ -27,12 +27,16 @@ class Search extends Component {
     return (
       <div className="App">
       <h1>Search MixologZy</h1>
-      <select name="cars">
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
+      {/* here i will do a drop down, that will call at the api based on the selection */}
+      {/* popular drinks dropdown */}
+      <select name="popular">
+        <option value="roni">NEGRONI</option>
+        <option value="car">SIDECAR</option>
+        <option value="mint">MINT JULEP</option>
+        <option value="sour">WHISKEY SOUR</option>
+        <option value="cosmo">COSMOPOLITAN</option>
       </select>
+      <input type="text" name="searchdrinks">
       </div>
     );
   }
