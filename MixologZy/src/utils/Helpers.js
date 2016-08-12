@@ -1,14 +1,14 @@
 import cors from 'cors';
 
 export default {
-  getAllDrinks: function(){
+  getAllDrinks: function(drinkNames){
 
     const fetchSettings = {
       method: 'GET',
       mode: 'cors',
       dataType: 'json'
     };
-  return fetch('http://addb.absolutdrinks.com/drinks/?apiKey=477a7635dcb248d591a7abdaf035ee32', fetchSettings).then((response) => {
+  return fetch(`http://addb.absolutdrinks.com/quickSearch/drinks/${drinkNames}/?apiKey=477a7635dcb248d591a7abdaf035ee32`, fetchSettings).then((response) => {
    return response.json();
  });
   }
