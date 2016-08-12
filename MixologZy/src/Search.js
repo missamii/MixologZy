@@ -1,45 +1,56 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.css';
 // import { Button } from 'react-bootstrap';
-// import { Link } from 'react-router';
+import { Link } from 'react-router';
+import { Router, Route, browserHistory } from 'react-router';
 import Helpers from './utils/Helpers.js';
 
 class Search extends Component {
+
   constructor(){
     super()
     this.state = {
-      colors: [],
+      allDrinks: [],
       results: [],
-      listyle: []
+      ingredients: [],
+      brands: [],
+      skill: [],
+      occasions: []
     };
   }
-  /* the event button for the drinks api */
-  getDrinks(event) {
+
+  /* the event drop down button for the drinks api */
+  getAllDrinks(event) {
     event.preventDefault();
-
-    this.setState({
-      isFetching: true
+    Helpers.getAllDrinks().then((value) => {
+      console.log(value);
     });
+  }
 
-
-  render() {
+  render(){
+    // console.log(this.state);
     return (
-      <div className="App">
-      <h1>Search MixologZy</h1>
-      {/* here i will do a drop down, that will call at the api based on the selection */}
-      {/* popular drinks dropdown */}
-      <select name="popular">
-        <option value="roni">NEGRONI</option>
-        <option value="car">SIDECAR</option>
-        <option value="mint">MINT JULEP</option>
-        <option value="sour">WHISKEY SOUR</option>
-        <option value="cosmo">COSMOPOLITAN</option>
-      </select>
-      <input type="text" name="searchdrinks">
+      <div className="Search">
+        <h1>Search MixologZy</h1>
+        {/* onChange function for api call with drop down*/}
+          <div className="dropdown">
+            <button className="dropbtn">Dropdown</button>
+            <div className="dropdown-content">
+              <a href="#">Caipirinha</a>
+              <a href="#">Mint Julep</a>
+              <a href="#">Mimosa</a>
+              <a href="#">Margarita</a>
+              <a href="#">Negroni</a>
+            </div>
+          </div>
+            <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks" /> <button onClick={(event) => this.getAllDrinks(event)}>Search</button>
+
+          <div className="container">
+             {/* drinks .map should go here to render all drinks or just a list of the popular ones */}
+          </div>
       </div>
     );
   }
 }
 
-export default Search;
+export default Search

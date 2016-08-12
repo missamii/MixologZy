@@ -14,4 +14,4 @@ class Young extends Component {
   }
 }
 
-export default Young;
+export default Young
