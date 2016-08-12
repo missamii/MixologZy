@@ -1,7 +1,9 @@
 body {
   background-color: #404040;
-  /*background-image: url('glowingcocktail.jpg');*/
+  background-image: url(glowingcocktail.jpg);
+  background-attachment: fixed;
   background-repeat: no-repeat;
+  background-position: bottom right;
   overflow-x: hidden;
   font-family: georgia;
   color: #333333;
@@ -15,7 +17,6 @@ body {
   position: absolute;
   right: 0px;
   bottom: 0px;
-  /*background-image: url('glowingcocktail.jpg');*/
 }
 .App {
   /*margin-top: 20px;*/
@@ -32,26 +33,6 @@ body {
   z-index: 1;
   margin-top: 7em
 }
-
-.header {
-  position: absolute; top: 0px; left: -30px;
-  background-repeat: no-repeat;
-}
-.navi {
-  position: absolute;
-  overflow: yes;
-  top: 10px;
-  left: 150px;
-  width: 913px;
-  float: center;
-  text-align: center;
-  background-color: #FFFFFF;
-  border-left: 5px solid #AEAEAE;
-  border-right: 5px solid #AEAEAE;
-  opacity:0.5;
-  filter: alpha(opacity=50);
-}
-
 .container {
   position: absolute;
   overflow: yes;
@@ -66,51 +47,24 @@ body {
   box-shadow: 0 0 3px #414141;
 }
 
-#sidebar1 {
-  width: 200px; float: left;
-  background-color:#FFFFFF;
-  border-right: 1px solid #333333;
-}
-#sidebar2 {
-  width: 200px; float: left;
-  margin-left: 1px;
-  background-color:#FFFFFF;
-  border-right: 1px solid #333333;
-}
-#updates {
-  width: 509px; float: right;
-  background-color:#FFFFFF;
-}
-#content {
-  width: 509px; float: right;
-  background-color:#FFFFFF;
-}
-.footer {
-  width: 913px;
-  background-color:#FFFFFF;
-  clear: both; display: block;
-}
 a:link, a:active, a:visited {
   color: #333333;
   font-family: georgia;
-  font-size: 11px;
+  font-size: 16px;
   text-transform: lowercase;
   text-decoration: none;
 }
-
 a:hover {
   color: #c0c0c0;
 }
-
 a.linka {
   color: #333333;
   font-family: georgia;
-  font-size: 11px;
+  font-size: 16px;
   line-height: 10px;
   text-transform: lowercase;
   text-align:center;
 }
-
 a.linka:hover {
   color: #C0C0C0;
 }
@@ -141,6 +95,7 @@ a.nava, a.nava:link, a.nava:active, a.nava:visited {
 a.nava:hover {
   color:#FFFFFF;
 }
+
 textarea {
   color: #333333;
   font-family: ernest;
@@ -157,7 +112,6 @@ textarea {
   border-left: 5px solid #CBCBCB;
   border-right: 5px solid #CBCBCB;
 }
-
 blockquote {
   color: #333333;
   font-family: georgia;
@@ -180,7 +134,6 @@ big {
   text-transform: lowercase;
   line-height: 10px;
 }
-
 small {
   color: #969696;
   font-family: ernest;
@@ -190,17 +143,14 @@ small {
   letter-spacing: 0px;
   font-weight: normal;
 }
-
 b, strong {
   color: #969696;
 }
-
 u {
   color: #969696;
   font-style: normal;
   border-bottom: 1px dotted #000000;
 }
-
 i, s {
   color:#333333;
 }
@@ -291,6 +241,7 @@ h5 {
 h5:first-letter {
   color:#2A2A2A;
 }
+
 .dropbtn {
   background-color: #19F6E8;
   color: white;
@@ -307,7 +258,7 @@ h5:first-letter {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 241px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .dropdown-content a {
@@ -320,26 +271,33 @@ h5:first-letter {
   background-color: #f1f1f1
 }
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 .dropdown:hover .dropbtn {
-    background-color: #19F6E8;
+  background-color: #19F6E8;
+}
+.search {
+  background-color: #19f6e8;
+  border: none;
+  color: #fff;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.search:hover {
+  background-color: #008CBA;
+  color: white;
 }
 
 .button {
   font-size: 1em;
-  /*padding: 10px;*/
   color: #10032E;
-  /*background: rgba(255,255,255,0.2);*/
-  /*border-radius: 20px/50px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s ease-out;*/
 }
-/*.button:hover {
-  background: #E6C6EF;
-  border: 2px solid #268EA9;
-}*/
 .svg-wrapper {
   height: 60px;
 	margin: 0 auto;

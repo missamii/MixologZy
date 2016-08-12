@@ -32,9 +32,11 @@ class Search extends Component {
     return (
       <div className="Search">
         <h1>Search MixologZy</h1>
+        <br /> <br /> <br />
+
         {/* onChange function for api call with drop down*/}
           <div className="dropdown">
-            <button className="dropbtn">Dropdown</button>
+            <button className="dropbtn">Top 5 Popular Drinks</button>
             <div className="dropdown-content">
               <a href="#">Caipirinha</a>
               <a href="#">Mint Julep</a>
@@ -42,8 +44,8 @@ class Search extends Component {
               <a href="#">Margarita</a>
               <a href="#">Negroni</a>
             </div>
-          </div>
-            <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks" /> <button onClick={(event) => this.getAllDrinks(event)}>Search</button>
+          </div> <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks" /> <button className="search" onClick={(event) => this.getAllDrinks(event)}>Search</button>
+
 
           <div className="container">
              {/* drinks .map should go here to render all drinks or just a list of the popular ones */}
