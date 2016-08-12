@@ -24,6 +24,8 @@ class Search extends Component {
     event.preventDefault();
     Helpers.getAllDrinks().then((value) => {
       console.log(value);
+
+
     });
   }
 
@@ -44,7 +46,8 @@ class Search extends Component {
               <a href="#">Margarita</a>
               <a href="#">Negroni</a>
             </div>
-          </div> <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks" /> <button className="search" onClick={(event) => this.getAllDrinks(event)}>Search</button>
+          </div> <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks" /> <button className="search" onClick={(event) => this.getAllDrinks(event)}>Search All</button>
+        <h2>Nothing shows up? <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en">Install this plugin</a></h2>
 
 
           <div className="container">

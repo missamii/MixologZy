@@ -1,3 +1,5 @@
+import cors from 'cors';
+
 export default {
   getAllDrinks: function(){
 
