@@ -9,11 +9,15 @@ export default {
       dataType: 'json'
     };
 
+    console.log('drink name ', drinkNames);
+    // when hosted online, uncomment this back
     // return fetch(`https://addb.absolutdrinks.com/quickSearch/drinks/${drinkNames}/?apiKey=477a7635dcb248d591a7abdaf035ee32`, fetchSettings).then((response) => {
-    return fetch(`http://localhost:3000/data.json`, fetchSettings).then((response) => {
+    //for desktop leave uncommented
+    return fetch(`http://localhost:3000/${drinkNames}.json`, fetchSettings).then((response) => {
         return response.json();
-    }).catch(() => {
-      console.log('error');
+    }).catch((err) => {
+        console.log(err);
+        return {};
     });
   }
 };

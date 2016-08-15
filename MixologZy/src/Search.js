@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-// import { Button } from 'react-bootstrap';
 import { Link } from 'react-router';
 import { Router, Route, browserHistory } from 'react-router';
 import Helpers from './utils/Helpers.js';
@@ -20,7 +19,7 @@ class SearchResult extends Component {
               <img src={imageSrc} />
               <div><strong>Brand: </strong> {this.props.data.brands[0]}</div>
               <div><strong>Skill: </strong> {this.props.data.skill.name}</div>
-              <div><strong>Type: </strong> {}</div>
+              <div><strong>Type: </strong> {isAlcoholic}</div>
               <div><strong>Ingredients: </strong>
               {
                 this.props.data.ingredients.map(function(i) {
@@ -34,11 +33,11 @@ class SearchResult extends Component {
                 this.props.data.videos.map(function(video) {
                   if (video.type == 'youtube') {
                       var src = 'https://www.youtube.com/embed/' +video.video;
-                      return <iframe width="420" height="315" src={src}></iframe>
+                      return <iframe width="350" height="280" src={src}></iframe>
                   } else if (video.type == 'assets') {
                       var src = 'http://assets.absolutdrinks.com/videos/' +video.video;
                       return (
-                        <video width="420" height="315" controls src={src}></video>
+                        <video width="350" height="280" controls src={src}></video>
                       )
                   } else return null;
                 })
