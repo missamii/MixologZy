@@ -63,7 +63,6 @@ body {
     right: 40px;
     top: 0px;
 }
-
 a:link, a:active, a:visited {
   color: #333333;
   font-family: georgia;
@@ -112,23 +111,6 @@ a.nava, a.nava:link, a.nava:active, a.nava:visited {
 a.nava:hover {
   color:#FFFFFF;
 }
-
-/*textarea {
-  color: #333333;
-  font-family: ernest;
-  font-size: 9px;
-  text-transform: uppercase;
-  text-align: center;
-  width:300px;
-  height:25px;
-  margin-left: 40px;
-  margin-right: 40px;
-  background-color: #DAD9DA;
-  border-top: 1px solid #CBCBCB;
-  border-bottom: 1px solid #CBCBCB;
-  border-left: 5px solid #CBCBCB;
-  border-right: 5px solid #CBCBCB;
-}*/
 blockquote {
   color: #333333;
   font-family: georgia;
@@ -141,24 +123,6 @@ blockquote {
   background-color: #DAD9DA;
   border-left: 5px solid #CBCBCB;
   border-right: 5px solid #CBCBCB;
-}
-big {
-  color: #969696;
-  font-family: georgia;
-  font-size: 25px;
-  text-decoration: none;
-  letter-spacing: -2px;
-  text-transform: lowercase;
-  line-height: 10px;
-}
-small {
-  color: #969696;
-  font-family: ernest;
-  font-size: 10px;
-  line-height: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0px;
-  font-weight: normal;
 }
 b, strong {
   color: #381A4C;
@@ -261,45 +225,48 @@ h5:first-letter {
   color:#2A2A2A;
 }
 
-.dropbtn {
-  background-color: #19F6E8;
-  color: white;
-  padding: 7px 42px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
 .dropdown {
-  position: relative;
-  display: inline-block;
+  border: none;
+  color: #525252;
+  font-size: 16px;
+  height: 45px;
+  line-height:15px;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 5px 0px 5px 5px;
+  width: 100%;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  background: #DFDFDF;
 }
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 241px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-}
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-.dropdown-content a:hover {
-  background-color: #f1f1f1
-}
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-.dropdown:hover .dropbtn {
-  background-color: #19F6E8;
+.input {
+  border: none;
+  color: #525252;
+  font-size: 14px;
+  height: 25px;
+  line-height:15px;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 5px 0px 5px 5px;
+  width: 50%;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  background: #DFDFDF;
+
 }
 .search {
   background-color: #19f6e8;
   border: none;
   color: #fff;
-  padding: 16px 32px;
+  padding: 8px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -314,54 +281,55 @@ h5:first-letter {
 }
 
 .button {
-  font-size: 1em;
-  color: #10032E;
+  background: none;
+  border: none;
+  font-family:sans-serif;
+  padding:1em 1.5em;
+  color:#000;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  transition:.2s ease all;
+  z-index:2;
+  border-radius:0px;
 }
-.svg-wrapper {
-  height: 60px;
-	margin: 0 auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 320px;
+.button:hover {
+    color:#fff;
+    border-radius:3px;
 }
-.shape {
-  fill: transparent;
-  stroke-dasharray: 140 540;
-  stroke-dashoffset: -474;
-  stroke-width: 8px;
-  stroke: #19f6e8;
+.button:before {
+  position:absolute;
+  top:calc(100% - 3px);
+  left:0;
+  width:calc(100%);
+  height:50%;
+  content:'';
+  color:#fff;
+  background:#00ce8d;
+  transition:.2s ease all;
+  z-index:-1;
 }
-.text {
-  color: #fff;
-  font-family: 'Roboto Condensed';
-  font-size: 22px;
-  letter-spacing: 8px;
-  line-height: 32px;
-  position: relative;
-  top: -48px;
+.button:after {
+  position:absolute;
+  bottom:calc(100% - 3px);
+  left:0;
+  width:calc(100%);
+  height:50%;
+  content:'';
+  color:#fff;
+  background:#00ce8d;
+  transition:.2s ease all;
+  z-index:-1;
 }
-@keyframes draw {
-  0% {
-    stroke-dasharray: 140 540;
-    stroke-dashoffset: -474;
-    stroke-width: 8px;
-  }
-  100% {
-    stroke-dasharray: 760;
-    stroke-dashoffset: 0;
-    stroke-width: 2px;
-  }
+.button:hover:before{
+  top:50%;
+  left:0;
+  width:100%;
+  height:50%;
 }
-.svg-wrapper:hover .shape {
-  -webkit-animation: 0.5s draw linear forwards;
-  animation: 0.5s draw linear forwards;
-}
-.close {
-    text-align: right;
-    padding: 5px;
-    cursor: pointer;
-}
-.close:hover {
-    text-decoration: underline;
+.button:hover:after {
+  bottom:50%;
+  left:0;
+  width:100%;
+  height:50%;
 }

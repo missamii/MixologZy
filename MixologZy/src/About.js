@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Router, Route, browserHistory } from 'react-router';
+// import { Router, Route, browserHistory } from 'react-router';
+import './App.css';
+
 
 
 class About extends Component {
@@ -7,7 +9,7 @@ class About extends Component {
     return(
       <div className="About">
         <h3>About MixologZy App</h3>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          <p> MixologZy is an App that makes being a bartender easy. You don't need to be skilled in order to impress your friends and family with drinks both alcoholic and non-alcoholic. All you have to do is search for the perfect drink, and you'll be a hit at your next party in no time! </p>
       </div>
     )
   }

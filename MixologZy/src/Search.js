@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+// import './Search.css';
 import { Link } from 'react-router';
 import { Router, Route, browserHistory } from 'react-router';
 import Helpers from './utils/Helpers.js';
@@ -130,16 +130,16 @@ class Search extends Component {
         <br /> <br /> <br />
 
         {/* onChange function for api call with drop down */}
-          <select onChange={this.handleChange}>
-            <option value="start">Top 5 popular drinks</option>
+          <select className="dropdown" onChange={this.handleChange}>
+            <option value="start">TOP 5 POPULAR DRINKS</option>
             <option value="cosmopolitan">Cosmopolitan</option>
             <option value="daiquiri">Daiquiri</option>
             <option value="mimosa">Mimosa</option>
             <option value="margarita">Margarita</option>
             <option value="negroni">Negroni</option>
-
           </select>
-           <input type="text" placeholder="old fashioned, tequila......" className="searchdrinks"  onChange={this.handleChange}/>
+          <br />
+           <input type="text" className="input" placeholder="old fashioned, sour, tequila......" onChange={this.handleChange}/>
            <button className="search" onClick={this.getAllDrinks}>Search All</button>
         <h2>Nothing shows up? <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en">Install this plugin</a></h2>
         <SearchResultContainer data={this.state.results} Close={this.CloseSearchBox}/>
