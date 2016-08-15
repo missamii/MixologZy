@@ -19,7 +19,9 @@ class SearchResult extends Component {
               <img src={imageSrc} />
               <div><strong>Brand: </strong> {this.props.data.brands[0]}</div>
               <div><strong>Skill: </strong> {this.props.data.skill.name}</div>
-              <div><strong>Type: </strong> {isAlcoholic}</div>
+                <div><strong>Type: </strong> {
+              (this.props.data.isAlcoholic) ? <span>Alcoholic</span> : <span>Non Alcoholic</span>
+            }</div>
               <div><strong>Ingredients: </strong>
               {
                 this.props.data.ingredients.map(function(i) {
@@ -131,11 +133,13 @@ class Search extends Component {
           <select onChange={this.handleChange}>
             <option value="start">Top 5 popular drinks</option>
             <option value="mint%20julep">Mint Julep</option>
-            <option value="mimosa">mimosa</option>
+            <option value="mimosa">Mimosa</option>
             <option value="margarita">Margarita</option>
             <option value="negroni">Negroni</option>
+            <option value="daiquiri">Daiquiri</option>
+
           </select>
-           <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks"  onChange={this.handleChange}/>
+           <input type="text" placeholder="old fashioned, tequila......" className="searchdrinks"  onChange={this.handleChange}/>
            <button className="search" onClick={this.getAllDrinks}>Search All</button>
         <h2>Nothing shows up? <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en">Install this plugin</a></h2>
         <SearchResultContainer data={this.state.results} Close={this.CloseSearchBox}/>
