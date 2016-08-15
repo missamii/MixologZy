@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 // import { Button } from 'react-bootstrap';
 import { Link } from 'react-router';
-import Young from './Young';
-import Search from './Search.js';
 
 
 class App extends Component {

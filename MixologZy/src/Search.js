@@ -5,6 +5,74 @@ import { Link } from 'react-router';
 import { Router, Route, browserHistory } from 'react-router';
 import Helpers from './utils/Helpers.js';
 
+class SearchResult extends Component {
+    constructor() {
+      super();
+    }
+
+    render() {
+      console.log(this.props.data);
+      var imageSrc = 'http://assets.absolutdrinks.com/drinks/300x400/' +this.props.data.id +'.png';
+      return (
+        <div className="searchResult" data-id={this.props.data.id}>
+            <h3>{this.props.data.name}</h3>
+            <div className="body">
+              <img src={imageSrc} />
+              <div><strong>Brand: </strong> {this.props.data.brands[0]}</div>
+              <div><strong>Skill: </strong> {this.props.data.skill.name}</div>
+              <div><strong>Type: </strong> {}</div>
+              <div><strong>Ingredients: </strong>
+              {
+                this.props.data.ingredients.map(function(i) {
+                  return <li> {i.textPlain} </li>;
+                })
+              }
+              </div>
+              <div><strong>Description: </strong> {this.props.data.descriptionPlain}</div>
+              <div><strong>Video:</strong> <br />
+              {
+                this.props.data.videos.map(function(video) {
+                  if (video.type == 'youtube') {
+                      var src = 'https://www.youtube.com/embed/' +video.video;
+                      return <iframe width="420" height="315" src={src}></iframe>
+                  } else if (video.type == 'assets') {
+                      var src = 'http://assets.absolutdrinks.com/videos/' +video.video;
+                      return (
+                        <video width="420" height="315" controls src={src}></video>
+                      )
+                  } else return null;
+                })
+              }
+              </div>
+            </div>
+        </div>
+      );
+    }
+}
+
+
+class SearchResultContainer extends Component {
+    constructor() {
+      super();
+    }
+
+    render() {
+      console.log(this.props.data)
+      return (
+        <div className="container">
+        {
+          (this.props.data.length > 0) ? <div className="close" onClick={this.props.Close}>close x</div> : null
+        }
+        {
+          this.props.data.map(function(result) {
+            return <SearchResult data={result} key={result.id}/>
+          })
+        }
+        </div>
+      );
+    }
+}
+
 
 class Search extends Component {
 
@@ -19,21 +87,38 @@ class Search extends Component {
       skill: [],
       type: [],
       isAlcoholic: [],
-      video: []
+      video: [],
+      searchKey: "mint julep"
     };
+
+    // Functions must be bound manually with ES6 classes
+    this.handleChange = this.handleChange.bind(this);
+    this.getAllDrinks = this.getAllDrinks.bind(this);
+    this.CloseSearchBox = this.CloseSearchBox.bind(this);
+
   }
 
   /* the event dropdown & search all button for the drinks api */
-  getAllDrinks(drinkNames) {
-    event.preventDefault();
-    Helpers.getAllDrinks(drinkNames).then((value) => {
-      console.log(value);
+  getAllDrinks(event) {
+    // event.preventDefault();
+    Helpers.getAllDrinks(this.state.searchKey).then((value) => {
+        this.setState({results: value.result});
     });
   }
 
   componentDidMount() {
     console.log('component mounted!')
-    this.getAllDrinks('mint julep')
+  }
+
+  handleChange(event) {
+    this.setState({
+      searchKey: event.target.value
+    });
+    // this.state.searchKey = event.target.value;
+  }
+
+  CloseSearchBox() {
+    this.setState({results: []});
   }
 
   render(){
@@ -44,21 +129,17 @@ class Search extends Component {
         <br /> <br /> <br />
 
         {/* onChange function for api call with drop down */}
-          <select onChange={(event) => this.getAllDrinks(event.target.value)}>
+          <select onChange={this.handleChange}>
             <option value="start">Top 5 popular drinks</option>
             <option value="mint%20julep">Mint Julep</option>
             <option value="mimosa">mimosa</option>
             <option value="margarita">Margarita</option>
             <option value="negroni">Negroni</option>
           </select>
-           <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks" /> <button className="search" onClick={(event) => this.getAllDrinks(event)}>Search All</button>
+           <input type="text" placeholder="old fashion, bloody m....." className="searchdrinks"  onChange={this.handleChange}/>
+           <button className="search" onClick={this.getAllDrinks}>Search All</button>
         <h2>Nothing shows up? <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en">Install this plugin</a></h2>
-
-
-        <div className="container">
-           {/* drinks .map should go here to render all drinks or just a list of the popular ones */}
-
-        </div>
+        <SearchResultContainer data={this.state.results} Close={this.CloseSearchBox}/>
       </div>
     );
   }

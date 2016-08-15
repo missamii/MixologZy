@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-import { Link } from 'react-router';
 import About from './About';
-import Young from './Young';
 import Search from './Search';
 import App from './App';
 import './index.css';
