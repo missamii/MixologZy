@@ -11,7 +11,7 @@ class SearchResult extends Component {
 
     render() {
       console.log(this.props.data);
-      var imageSrc = 'http://assets.absolutdrinks.com/drinks/300x400/' +this.props.data.id +'.png';
+      var imageSrc = 'http://assets.absolutdrinks.com/drinks/transparent-background-black/300x400/' +this.props.data.id +'.png';
       return (
         <div className="searchResult" data-id={this.props.data.id}>
             <h3>{this.props.data.name}</h3>
