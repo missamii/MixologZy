@@ -89,7 +89,7 @@ class Search extends Component {
       type: [],
       isAlcoholic: [],
       video: [],
-      searchKey: "mint julep"
+      searchKey: "sour"
     };
 
     // Functions must be bound manually with ES6 classes
@@ -132,11 +132,11 @@ class Search extends Component {
         {/* onChange function for api call with drop down */}
           <select onChange={this.handleChange}>
             <option value="start">Top 5 popular drinks</option>
-            <option value="mint%20julep">Mint Julep</option>
+            <option value="cosmopolitan">Cosmopolitan</option>
+            <option value="daiquiri">Daiquiri</option>
             <option value="mimosa">Mimosa</option>
             <option value="margarita">Margarita</option>
             <option value="negroni">Negroni</option>
-            <option value="daiquiri">Daiquiri</option>
 
           </select>
            <input type="text" placeholder="old fashioned, tequila......" className="searchdrinks"  onChange={this.handleChange}/>
