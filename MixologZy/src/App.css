@@ -138,17 +138,16 @@ i, s {
 h1 {
   font-family: ernest;
   font-size: 25px;
-  color: #381A4C;
-  line-height: 8px;
-  font-weight: normal;
-  letter-spacing: 3px;
   text-transform: uppercase;
+  font-weight: normal;
   text-align: center;
-  margin: 0px;
-  border-bottom: 1px dotted #AEAEAE;
-  border-left: 5px solid #AEAEAE;
-  border-right: 5px solid #AEAEAE;
-  background-color: #DAD9DA;
+  color: #744574;
+  letter-spacing: 1px;
+  margin: 18px;
+  padding: 3px;
+  text-align: left; padding-right:10px;
+  background-color: #eee;
+  border-bottom: #000 solid 1px;
 }
 h2 {
   font-family: ernest;
@@ -168,63 +167,6 @@ h2 {
 h2:first-letter {
   color:#2A2A2A;
 }
-h3 {
-  font-family: ernest;
-  font-size: 10px;
-  color: #636363;
-  line-height: 8px;
-  font-weight: normal;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0px;
-  border-bottom: 1px dotted #AEAEAE;
-  border-left: 5px solid #AEAEAE;
-  border-right: 5px solid #AEAEAE;
-  background-color: #DAD9DA;
-  padding: 10px;
-
-}
-h3:first-letter {
-  color:#2A2A2A;
-}
-h4 {
-  font-family: ernest;
-  font-size: 10px;
-  color: #636363;
-  line-height: 8px;
-  font-weight: normal;
-  letter-spacing: 3px;
-  text-transform:uppercase;
-  text-align: center;
-  margin: 0px;
-  border-bottom: 1px dotted #AEAEAE;
-  border-left: 5px solid #AEAEAE;
-  border-right: 5px solid #AEAEAE;
-  background-color: #DAD9DA;
-}
-h4:first-letter {
-  color:#2A2A2A;
-}
-h5 {
-  font-family: ernest;
-  font-size: 10px;
-  color: #636363;
-  line-height: 8px;
-  font-weight: normal;
-  letter-spacing: 3px;
-  text-transform:uppercase;
-  text-align: center;
-  margin: 0px;
-  border-bottom: 1px dotted #AEAEAE;
-  border-left: 5px solid #AEAEAE;
-  border-right: 5px solid #AEAEAE;
-  background-color: #DAD9DA;
-}
-h5:first-letter {
-  color:#2A2A2A;
-}
-
 .dropdown {
   border: none;
   color: #525252;
