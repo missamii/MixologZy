@@ -14,7 +14,7 @@ class SearchResult extends Component {
       var imageSrc = 'http://assets.absolutdrinks.com/drinks/transparent-background-black/300x400/' +this.props.data.id +'.png';
       return (
         <div className="searchResult" data-id={this.props.data.id}>
-            <h3>{this.props.data.name}</h3>
+            <h1>{this.props.data.name}</h1>
             <div className="body">
               <img src={imageSrc} />
               <div><strong>Brand: </strong> {this.props.data.brands[0]}</div>
